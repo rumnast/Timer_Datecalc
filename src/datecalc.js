@@ -5,7 +5,8 @@ import { loadScript } from "./loadscript.js"
 export function switchcHtml1() {
     mainForm.innerHTML = "";
     mainForm.insertAdjacentHTML("beforeend",
-        `<form id="datecalc">
+        `<div class="blockDatecalc">
+        <form id="datecalc">
         <hr>
         <h3>Калькулятор дат</h3>
         <label>
@@ -19,7 +20,8 @@ export function switchcHtml1() {
         <button type="submit">Расчитать промежуток</button>
         <p id="datecalc__result"></p>
         <hr>
-        </form>`);
+        </form>
+        </div>`);
 
     const dateCalcForm = document.getElementById("datecalc");
     const dateCalcResult = document.getElementById("datecalc__result");

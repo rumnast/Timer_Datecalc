@@ -1,0 +1,35 @@
+body{
+    background-color: lightgray;   
+    padding: 30px;
+    .block{
+        margin: 0 auto;
+        .blockTimer{
+            width: 357px;
+        }
+        .blockDatecalc{
+            width: 488px;
+        }
+    }
+}
+
+button{    
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    background-color: gray;
+}
+
+button:hover{
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.er{
+    color: red;
+    font-size: large;
+}

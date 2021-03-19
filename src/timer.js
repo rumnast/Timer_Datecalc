@@ -5,7 +5,8 @@ import { loadScript } from "./loadscript.js"
 export function switchcHtml2() {
     mainForm.innerHTML = "";
     mainForm.insertAdjacentHTML("beforeend",
-        `<form id="timer">
+        `<div class="blockTimer">
+        <form id="timer">
         <hr>
         <h3>Таймер</h3>
         <label>
@@ -16,7 +17,8 @@ export function switchcHtml2() {
         <button type="submit" id="buttonStop">Стоп</button>
         <div id="timeValue"></div>
         <hr>
-    </form>`);
+    </form>
+    </div>`);
     const timerForm = document.getElementById("timer");
     const timerResult = document.getElementById("timeValue");
     let timerId;

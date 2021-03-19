@@ -1,5 +1,5 @@
 const formatError = text => `
-<span style="color: red;">
+<span class="er">
     ${text}
 </span>
 `;
