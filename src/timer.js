@@ -58,7 +58,7 @@ export function switchcHtml2() {
                     let audio = new Audio();
                     audio.src = './audio/alarm.mp3';
                     audio.preload = 'auto';
-                    //console.log(audio);
+                    console.log(audio);
                     audio.play();
                     timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
                 } else {

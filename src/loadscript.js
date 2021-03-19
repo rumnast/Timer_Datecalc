@@ -37,7 +37,7 @@ export function loadScript(urls, callback) {
         let prom = new Promise(
             function (resolve, reject) {
                 return element.onload =
-                    function () { resolve("ffeff") }
+                    function () { resolve("done") }
             }
         );
         promises.push(prom);
