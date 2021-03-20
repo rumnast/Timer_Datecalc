@@ -1,5 +1,5 @@
-//import { formatError } from "./utils.js";
-import { loadScript } from "./loadscript.js"
+import { formatError } from "./utils.js";
+import { loadScript } from "./loadscript.js";
 
 
 export function switchcHtml2() {
@@ -49,7 +49,7 @@ export function switchcHtml2() {
                 return;
             }
 
-            let timeMs = ((Math.abs(time) * 10000) - 1000);
+            let timeMs = ((Math.abs(time) * 60000) - 1000);
             timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
 
             timerId = setInterval(() => ChangeTime(), 1000);
@@ -60,7 +60,7 @@ export function switchcHtml2() {
                     let audio = new Audio();
                     audio.src = './audio/alarm.mp3';
                     audio.preload = 'auto';
-                    console.log(audio);
+                    //console.log(audio);
                     audio.play();
                     timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
                 } else {

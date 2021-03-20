@@ -1,3 +1,5 @@
+import "../style/style.scss";
+//import "../style/style.css";
 import { switchcHtml1 } from "./datecalc.js";
 import { switchcHtml2 } from "./timer.js";
 
