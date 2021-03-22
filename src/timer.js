@@ -1,5 +1,8 @@
 import { formatError } from "./utils.js";
 import { loadScript } from "./loadscript.js";
+import alarmSound from "../audio/alarm.mp3";
+import alarmImg from "../img/alarm.png"
+
 
 
 export function switchcHtml2() {
@@ -16,6 +19,7 @@ export function switchcHtml2() {
         <button type="submit" id="buttonStart">Старт</button>
         <button type="submit" id="buttonStop">Стоп</button>
         <div id="timeValue"></div>
+        <img class="alarmImg" src="${alarmImg}" alt="">
         <hr>
     </form>
     </div>`);
@@ -27,29 +31,19 @@ export function switchcHtml2() {
     function handleTimer(event) {
         event.preventDefault();
         let activeElement = document.activeElement;
-
+        let alarm = document.querySelector(".alarmImg");
+        alarm.style.display = "none";
         if (activeElement.id === 'buttonStart') {
+
             let time = event.target.elements[0].value;
             // console.log(time);
             if (time == 0 || isNaN(time)) {
                 //console.log(time);
-                loadScript("./src/utils.js",
-                    function (flag) {
-                        if (flag) {
-                            //console.log("sdfsdf");
-                            console.log(flag);
-                        }
-                        else {
-                            //console.log(error);
-                            timerResult.innerHTML = formatError("Введите целое число");
-                        }
-                    }
-                );
-
-                return;
+                timerResult.innerHTML = formatError("Введите целое число");
+                return
             }
 
-            let timeMs = ((Math.abs(time) * 60000) - 1000);
+            let timeMs = ((Math.abs(time) * 10000) - 1000);
             timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
 
             timerId = setInterval(() => ChangeTime(), 1000);
@@ -57,11 +51,12 @@ export function switchcHtml2() {
                 timeMs = timeMs - 1000;
                 if (timeMs < 1000) {
                     clearInterval(timerId);
-                    let audio = new Audio();
-                    audio.src = './audio/alarm.mp3';
-                    audio.preload = 'auto';
+                    let audio = new Audio(alarmSound);
+                    //audio.src = './audio/alarm.mp3';
+                    //audio.preload = 'auto';
                     //console.log(audio);
                     audio.play();
+                    alarm.style.display = "inline";
                     timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
                 } else {
                     timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);

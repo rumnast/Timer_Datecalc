@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+
 import { formatError } from "./utils.js";
 import { loadScript } from "./loadscript.js";
 
@@ -39,14 +40,7 @@ export function switchcHtml1() {
             dateCalcResult.innerHTML = diffToHtml(diff);
         }
         else {
-            loadScript("./src/utils.js", function (error, script) {
-                if (error) {
-                    console.log(error);
-                }
-                else {
-                    dateCalcResult.innerHTML = formatError("Для расчета промежутка необходимо заполнить оба поля");
-                }
-            });
+            dateCalcResult.innerHTML = formatError("Для расчета промежутка необходимо заполнить оба поля");
         }
     }
 }

@@ -38,4 +38,9 @@ input {
   color: red;
   font-size: large;
 }
+
+img {
+  height: 100px;
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
