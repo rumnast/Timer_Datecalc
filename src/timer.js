@@ -1,5 +1,5 @@
 import { formatError } from "./utils.js";
-import { loadScript } from "./loadscript.js";
+//import { loadScript } from "./loadscript.js";
 import alarmSound from "../audio/alarm.mp3";
 import alarmImg from "../img/alarm.png"
 
@@ -43,7 +43,7 @@ export function switchcHtml2() {
                 return
             }
 
-            let timeMs = ((Math.abs(time) * 10000) - 1000);
+            let timeMs = ((Math.abs(time) * 60000) - 1000);
             timerResult.innerHTML = millisToMinutesAndSeconds(timeMs);
 
             timerId = setInterval(() => ChangeTime(), 1000);

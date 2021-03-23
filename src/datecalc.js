@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 
 import { formatError } from "./utils.js";
-import { loadScript } from "./loadscript.js";
+//import { loadScript } from "./loadscript.js";
 
 export function switchcHtml1() {
     mainForm.innerHTML = "";
